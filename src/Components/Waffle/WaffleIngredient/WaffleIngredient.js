@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import classes from './WaffleIngredients.css'
+//import classes from './WaffleIngredients.module.css';
+import './WaffleIngredients.module.css';
 import PropTypes from 'prop-types';
 
 class WaffleIngredient extends Component {
@@ -7,20 +8,21 @@ class WaffleIngredient extends Component {
         let ingredient = null;
     switch (this.props.type) {
         case('WaffleBottom'):
-            ingredient = <div className={classes.WaffleBottom}><p>WaffleBottom</p></div>; 
+            ingredient = <div className="WaffleBottom"><p>WaffleBottom</p></div>; 
         break;
         case('ChocolateSauce'):
-            ingredient = <div className={classes.ChocolateSauce}><p>ChocolateSauce</p></div>;
+            ingredient = <div className="ChocolateSauce"><p>ChocolateSauce</p></div>;
         break;
         case('WhippedCream'):
-            ingredient = <div className={classes.WhippedCream}><p>WhippedCream</p></div>;
+            ingredient = <div className="WhippedCream"><p>WhippedCream</p></div>;
         break;
         case('StrawberryJam'):
-            ingredient = <div className={classes.StrawberryJam}><p>StrawberryJam</p></div>;
+            ingredient = <div className="StrawberryJam"><p>StrawberryJam</p></div>;
         break;
         case('BlueberryJam'):
-            ingredient = <div className={classes.BlueberryJam}><p>BlueberryJam</p></div>;
+            ingredient = <div className="BlueberryJam"><p>BlueberryJam</p></div>;
         break;
+
         default: ingredient = null;
     }
     return ingredient;
