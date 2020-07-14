@@ -5,9 +5,9 @@ import Waffle from '../../Components/Waffle/Waffle'
 class WaffleMaker extends Component {
     state = {
         ingredients: {
-            WhippedCream: 1,
-            ChocolateSauce: 1,
-            BlueberryJam: 2,
+            WhippedCream: 0,
+            ChocolateSauce: 0,
+            BlueberryJam: 0
         }
     }
     render() {

@@ -3,7 +3,8 @@ import WaffleIngredient from './WaffleIngredient/WaffleIngredient';
 import classes from './Waffle.css'
 
 const waffle = (props) => {
-    let ingredientsArray = Object.keys(props.ingredients).map(ingKey => {
+    let ingredientsArray = Object.keys(props.ingredients)
+    .map(ingKey => {
         return[...Array(props.ingredients[ingKey])].map((_, i) => {
             return <WaffleIngredient key={ingKey + i} type={ingKey}  />
         })
@@ -12,7 +13,7 @@ const waffle = (props) => {
         }, []);
     });
     if (ingredientsArray.length === 0) {
-        ingredientsArray = <p>Please, start adding ingredients.</p>
+        ingredientsArray = <p>Please, start adding ingredients.</p>;
     }
     return(
         <div className={classes.Waffle}>
