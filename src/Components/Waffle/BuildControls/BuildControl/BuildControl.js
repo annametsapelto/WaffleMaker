@@ -4,8 +4,8 @@ import './BuildControl.css';
 const buildControl = (props) => (
     <div className="BuildControl">
         <div className="Label">{props.label}</div>
-        <button>Remove</button>
-        <button>Add</button>
+        <button onClick={props.removeIngredient}>Remove</button>
+        <button onClick={props.addIngredient}>Add</button>
     </div>
 );
 
