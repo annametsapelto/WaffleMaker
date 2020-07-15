@@ -9,7 +9,9 @@ const controls = [
     {label: 'Blueberry Jam', type: 'BlueberryJam'}
 ]
 const buildControls = (props) => (
+    
     <div className="BuildControls">
+        <p>Current price: {props.price.toFixed(2)}</p>
         {controls.map(ctrl => (
             <BuildControl 
             key={ctrl.label} 
@@ -18,6 +20,9 @@ const buildControls = (props) => (
             removeIngredient={()=>props.removeIngredient(ctrl.type)}
             disabled={props.disabled[ctrl.type]} />
         ))};
+        <button
+        disabled={!props.purchaseable}
+        >ORDER</button>
     </div>
 )
 export default buildControls;

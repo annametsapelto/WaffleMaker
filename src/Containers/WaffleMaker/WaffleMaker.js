@@ -17,7 +17,19 @@ class WaffleMaker extends Component {
             StrawberryJam: 0,
             BlueberryJam: 0
         },
-        totalPrice: 4
+        totalPrice: 4,
+        purchaseable: false
+    }
+
+    updatePuchaseable(ingredients) {
+        const sum = Object.keys(ingredients)
+        .map(ingKey => {
+            return ingredients[ingKey]
+        })
+        .reduce((sum, el) => {
+            return sum+el;
+        }, 0)
+        this.setState({purchaseable: sum>0})
     }
 
     addIngredientHandler = (type) => {
@@ -29,6 +41,7 @@ class WaffleMaker extends Component {
         const priceAddition = INGREDIENT_PRICES[type]
         const newPrice = this.state.totalPrice + priceAddition;
         this.setState({totalPrice: newPrice, ingredients: upgradedIngredients});
+        this.updatePuchaseable(upgradedIngredients)
     }
 
     removeIngredientHandler = (type) => {
@@ -44,6 +57,7 @@ class WaffleMaker extends Component {
         const priceDeducted = INGREDIENT_PRICES[type]
         const newPrice = this.state.totalPrice - priceDeducted;
         this.setState({totalPrice: newPrice, ingredients: upgradedIngredients});
+        this.updatePuchaseable(upgradedIngredients)
     }
 
     render() {
@@ -59,8 +73,9 @@ class WaffleMaker extends Component {
             <BuildControls 
               addIngredient={this.addIngredientHandler}
               removeIngredient={this.removeIngredientHandler}
-              disabled={disabledInfo}/>
-            <button>Buy</button>
+              disabled={disabledInfo}
+              price={this.state.totalPrice}
+              purchaseable={this.state.purchaseable}/>
         </Aux>)
     }
 }
