@@ -32,7 +32,11 @@ class WaffleMaker extends Component {
     }
 
     removeIngredientHandler = (type) => {
-        const updatedCount = this.state.ingredients[type] -1;
+        const oldCount = this.state.ingredients[type];
+        if (oldCount <= 0) {
+            return;
+        }
+        const updatedCount = oldCount -1;
         const upgradedIngredients = {
             ... this.state.ingredients
         };
@@ -43,12 +47,19 @@ class WaffleMaker extends Component {
     }
 
     render() {
+        const disabledInfo = {
+            ...this.state.ingredients
+        }
+        for (let key in disabledInfo) {
+            disabledInfo[key] = disabledInfo[key] <= 0
+        }
         return(
         <Aux>
             <Waffle ingredients={this.state.ingredients}/>
             <BuildControls 
               addIngredient={this.addIngredientHandler}
-              removeIngredient={this.removeIngredientHandler}/>
+              removeIngredient={this.removeIngredientHandler}
+              disabled={disabledInfo}/>
             <button>Buy</button>
         </Aux>)
     }
