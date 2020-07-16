@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxiliary'
 import Waffle from '../../Components/Waffle/Waffle'
 import BuildControls from '../../Components/Waffle/BuildControls/BuildControls';
+import Modal from '../../Components/UI/Modal/Modal';
+import OrderSummary from '../../Components/Waffle/OrderSummary/OrderSummary'
 
 const INGREDIENT_PRICES = {
     WhippedCream: 0.5,
@@ -18,7 +20,12 @@ class WaffleMaker extends Component {
             BlueberryJam: 0
         },
         totalPrice: 4,
-        purchaseable: false
+        purchaseable: false,
+        purchaseMode: false
+    }
+
+    purchaseModeHandler = () => {
+        this.setState({purchaseMode: true});
     }
 
     updatePuchaseable(ingredients) {
@@ -69,13 +76,17 @@ class WaffleMaker extends Component {
         }
         return(
         <Aux>
+            <Modal show={this.state.purchaseMode}>
+                <OrderSummary ingredients={this.state.ingredients}/>
+            </Modal>
             <Waffle ingredients={this.state.ingredients}/>
             <BuildControls 
               addIngredient={this.addIngredientHandler}
               removeIngredient={this.removeIngredientHandler}
               disabled={disabledInfo}
               price={this.state.totalPrice}
-              purchaseable={this.state.purchaseable}/>
+              purchaseable={this.state.purchaseable}
+              ordered={this.purchaseModeHandler}/>
         </Aux>)
     }
 }
