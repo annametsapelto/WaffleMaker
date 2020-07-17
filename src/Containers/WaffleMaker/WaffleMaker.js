@@ -30,6 +30,9 @@ class WaffleMaker extends Component {
     purchaseCancelHandler = () => {
         this.setState({purchaseMode: false});
     }
+    purchaseContinueHandler = () => {
+        alert('You continue!');
+    }
 
     updatePuchaseable(ingredients) {
         const sum = Object.keys(ingredients)
@@ -80,7 +83,11 @@ class WaffleMaker extends Component {
         return(
         <Aux>
             <Modal show={this.state.purchaseMode} modalClosed={this.purchaseCancelHandler}>
-                <OrderSummary ingredients={this.state.ingredients}/>
+                <OrderSummary 
+                purchaseCanceled={this.purchaseCancelHandler}
+                purchaseContinued={this.purchaseContinueHandler}
+                totalPrice={this.state.totalPrice}
+                ingredients={this.state.ingredients}/>
             </Modal>
             <Waffle ingredients={this.state.ingredients}/>
             <BuildControls 

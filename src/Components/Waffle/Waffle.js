@@ -1,6 +1,6 @@
 import React from 'react';
 import WaffleIngredient from './WaffleIngredient/WaffleIngredient';
-import classes from './Waffle.css'
+import './Waffle.css'
 
 const waffle = (props) => {
     let ingredientsArray = Object.keys(props.ingredients)
@@ -16,7 +16,7 @@ const waffle = (props) => {
         ingredientsArray = <p>Please, start adding ingredients.</p>;
     }
     return(
-        <div className={classes.Waffle}>
+        <div className="Waffle">
             {ingredientsArray}
             <WaffleIngredient type='WaffleBottom'/>
         </div>

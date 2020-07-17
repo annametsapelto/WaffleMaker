@@ -1,10 +1,10 @@
 .WaffleBottom {
-    height: 13%;
-    width: 80%;
+    height: 15%;
+    width: 100%;
     background: linear-gradient(#F08E4A, #e27b36);
     border-radius: 0 0 30px 30px;
     box-shadow: inset -15px 0 #c15711;
-    margin: 2% auto;
+    margin: 1% auto;
 }
 
 
@@ -12,30 +12,30 @@
     width: 80%;
     height: 5%;
     background: linear-gradient(#7f3608, #702e05);
-    margin: 2% auto;
+    margin: 1% auto;
     border-radius: 15px;
 }
 
 .WhippedCream {
     width: 75%;
-    height: 4.5%;
-    margin: 2% auto;
-    background: linear-gradient(#ffffe6, #ffffff);
+    height: 8%;
+    margin: 1% auto;
+    background: linear-gradient(#ffffff, #ffffe6);
     border-radius: 20px;
 }
 
 .StrawberryJam {
     width: 85%;
     height: 5%;
-    margin: 2% auto;
-    background: linear-gradient(#cc0000, #ff0000);
+    margin: 1% auto;
+    background: linear-gradient( #ff0000, #cc0000);
     border-radius: 15px;
 }
 
 .BlueberryJam {
     width: 80%;
     height: 5%;
-    background: linear-gradient(#660066, #000099);
-    margin: 2% auto;
+    background: linear-gradient(#660066, #00005f);
+    margin: 1% auto;
     border-radius: 15px;
 }
