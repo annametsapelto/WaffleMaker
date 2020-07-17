@@ -8,19 +8,19 @@ class WaffleIngredient extends Component {
         let ingredient = null;
     switch (this.props.type) {
         case('WaffleBottom'):
-            ingredient = <div className="WaffleBottom"><p>WaffleBottom</p></div>; 
+            ingredient = <div className="WaffleBottom"></div>; 
         break;
         case('ChocolateSauce'):
-            ingredient = <div className="ChocolateSauce"><p>ChocolateSauce</p></div>;
+            ingredient = <div className="ChocolateSauce"></div>;
         break;
         case('WhippedCream'):
-            ingredient = <div className="WhippedCream"><p>WhippedCream</p></div>;
+            ingredient = <div className="WhippedCream"></div>;
         break;
         case('StrawberryJam'):
-            ingredient = <div className="StrawberryJam"><p>StrawberryJam</p></div>;
+            ingredient = <div className="StrawberryJam"></div>;
         break;
         case('BlueberryJam'):
-            ingredient = <div className="BlueberryJam"><p>BlueberryJam</p></div>;
+            ingredient = <div className="BlueberryJam"></div>;
         break;
 
         default: ingredient = null;
