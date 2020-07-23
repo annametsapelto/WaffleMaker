@@ -5,7 +5,7 @@ const navigationItem = (props) => (
     <li 
         className="NavigationItem"> 
         <a href={props.link}
-        classname={props.active ? "Active" : null}></a>
+        className={props.active ? "Active" : null}></a>
         {props.children}
     </li>
 );

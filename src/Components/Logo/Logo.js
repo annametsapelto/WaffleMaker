@@ -3,7 +3,7 @@ import waffleLogo from '../../assets/images/waffles.png';
 import './Logo.css';
 
 const logo = (props) => (
-    <div className="Logo" style={{height: props.height}}>
+    <div className="Logo" style={{height: props.height, margin: props.margin}}>
         <img src={waffleLogo} alt="Waffle House"/>
     </div>
 )
